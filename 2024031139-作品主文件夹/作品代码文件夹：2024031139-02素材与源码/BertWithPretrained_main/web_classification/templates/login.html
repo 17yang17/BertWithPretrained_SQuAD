@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“慧语精灵”汉语经典阅读助手——测评系统-Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 20px;
+        }
+        .top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .top .icon-kaoshi {
+            font-size: 80px;
+            color: #007bff;
+        }
+        .top .title {
+            font-size: 30px;
+            color: #007bff;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .bottom .container {
+            margin-bottom: 30px;
+        }
+        .bottom .container .title {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .bottom .container input {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .submit .row-login {
+            width: 100%;
+            height: 40px;
+            background-color: #04468b;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit .row-login:hover {
+            background-color: #043366;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer .msg2 {
+            font-size: 14px;
+            color: #0c0909;
+        }
+        .remind {
+            border-radius: 4px;
+            padding: 10px 20px;
+            display: flex;
+            position: fixed;
+            right: 20px;
+            bottom: 50%;
+            flex-direction: column;
+            color: #606266;
+            background-color: #fff;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            margin-right: 10px;
+        }
+        .input-group input {
+            flex: 1;
+        }
+
+        .zhuce {
+            text-align: right;
+        }
+
+        .register-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .register-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login">
+    <div class="bg"></div>
+    <div class="main-container">
+      <div>
+        <div class="top">
+          <i class="iconfont icon-kaoshi"></i>
+          <span class="title">“慧语精灵”汉语经典阅读助手——测评系统</span>
+
+
+        </div>
+        <div class="bottom">
+          <div class="container">
+            <p class="title">账号登录</p>
+            <form action="/login" method="POST">
+              <div class="input-group">
+            <label>用户名：</label>
+            <input type="text" name="username" placeholder="请输入用户名">
+        </div>
+        <div class="input-group">
+            <label>密&emsp;码：</label>
+            <input type="password" name="password" placeholder="请输入密码">
+        </div>
+
+        <!-- Flash消息显示 -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="error-message">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <div class="submit">
+            <button type="submit" class="row-login">登录</button>
+        </div>
+                <div class="zhuce">
+                    <a class="register-link" href="{{ url_for('register') }}">注册新用户</a>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="msg2">版权所有 ©2024 保留所有权利 </p>
+    </div>
+{#    <section class="remind">#}
+{#      <span>管理员账号：9527</span>#}
+{#      <span>教师账号：20081001</span>#}
+{#      <span>密码都是：123456</span>#}
+{#      <span>学生账号：123</span>#}
+{#      <span>密码：456</span>#}
+{#    </section>#}
+  </div>
+
+
+</body>
+</html>

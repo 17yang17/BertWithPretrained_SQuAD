@@ -1,0 +1,46 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam System</title>
+    <!-- 引入Vue.js和Element-UI的CDN链接 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <div id="app">
+        <el-container>
+            <el-header>“慧语精灵”汉语经典阅读助手——测评系统</el-header>
+            <el-main>
+                <el-card>
+                    <el-form :model="formData" :rules="rules" ref="form" label-width="100px" class="demo-ruleForm">
+                        <!-- 表单项 -->
+                    </el-form>
+                </el-card>
+            </el-main>
+        </el-container>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    formData: {
+                        // 表单数据
+                    },
+                    rules: {
+                        // 表单校验规则
+                    }
+                };
+            },
+            methods: {
+                // 提交表单的方法
+            }
+        });
+    </script>
+</body>
+</html>

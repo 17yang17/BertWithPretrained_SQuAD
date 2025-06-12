@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“慧语精灵”汉语经典阅读助手——测评系统 - 学生</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        #student {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #007bff; /* 蓝色 */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #007bff; /* 蓝色 */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff; /* 蓝色 */
+        }
+        .logo span {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333; /* 深灰色 */
+        }
+        .list a {
+            text-decoration: none;
+            color: #333; /* 深灰色 */
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .list a:hover {
+            color: #007bff; /* 蓝色 */
+        }
+        .right {
+            position: relative;
+        }
+        .msg {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .right:hover .msg {
+            display: block;
+        }
+        .msg p {
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            color: #333; /* 深灰色 */
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .msg p:hover {
+            background-color: #f4f4f4;
+        }
+        .title {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .title a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .title a:hover {
+            color: #043366;
+        }
+        .arrow {
+            margin-left: 5px;
+        }
+        </style>
+    </head>
+<body>
+    <div id="student">
+        <div class="padding-50">
+            <div class="title">欢迎使用“慧语精灵”汉语经典阅读助手——测评系统</div>
+            <ul class="list">
+                <li class="logo"><i class="fas fa-graduation-cap"></i><span>“慧语精灵”</span></li>
+                <a href="/student">首页</a>
+                <a href="/quiz">开始测试</a>
+{#                <a href="#">历史结果</a>#}
+                <a href="#">待定</a>
+                <li class="right">
+
+                    <a href="#">
+                        <i class="fas fa-user">
+                        </i>
+                        <span id="username-placeholder">{{ username }}</span>
+                    </a>
+                    <div class="msg">
+                        <p>管理中心</p>
+                        <p class="exit">
+                            <a href="/">登录</a>
+                        </p>
+                        <p class="exit">
+                            <a href="/student">退出</a>
+                        </p>
+
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <img src="jiang.jpg" alt="Image" style="display: block; margin: 0 auto; width: 1200px;"> -->
+    <h1 class="title">
+        <a href="/quiz" class="link"><span class="arrow">全球最受欢迎的中文考试&gt;</span>
+        </a>
+    </h1>
+
+
+
+        {% include 'footer.html' %}
+
+</body>
+</html>
